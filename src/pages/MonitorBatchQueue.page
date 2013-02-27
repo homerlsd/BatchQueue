@@ -1,0 +1,26 @@
+<apex:page controller="MonitorBatchQueueController" action="{!getRecords}">
+<apex:Form >
+	<apex:actionPoller action="{!getRecords}" rerender="results" interval="5"/>
+	
+	<apex:PageBlock id="results">
+		
+		
+		<apex:pageBlockTable value="{!jobs}" var="j" rendered="{!isEmpty}">
+			<apex:column headerValue="batchClassName" width="15%">
+				<apex:outputText value="{!j.jobBatchState.batchClassName}"/>
+			</apex:column>
+			<apex:column headerValue="jobStatus" width="15%">
+				<apex:outputText value="{!j.jobStatus}"/>
+			</apex:column>
+			<apex:column headerValue="jobPriority" width="5%">
+				<apex:outputText value="{!j.jobPriority}"/>
+			</apex:column>
+			<apex:column headerValue="batchScope" >
+				<apex:outputText value="{!j.jobBatchState.batchScope}"/>
+			</apex:column>
+			
+		</apex:pageBlockTable>
+		
+	</apex:PageBlock>
+</apex:Form>
+</apex:page>
