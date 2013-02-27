@@ -17,7 +17,7 @@ public class JobBuilder {
 	}
 	
 	public class Job {
-		
+
 		private String jobStatus;
 		private String jobPriority;
 		private JobBatchState jobBatchState;
