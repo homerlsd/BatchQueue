@@ -8,7 +8,7 @@
  * job.getJobBatchState().addBatchParam('param1', new List<String>{'someString1','someString2'});
  * job.getJobBatchState().addBatchParam('param2', [Select Id, name from User LIMIT 10]);
  * JobManager.insertJob(job);
- *
+ * //
  */
 public without sharing class JobManager {
 	
